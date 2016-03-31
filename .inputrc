@@ -1,0 +1,34 @@
+$if Bash
+
+"\ep": history-search-backward
+"\en": history-search-forward
+"\C-r": redraw-current-line
+
+set editing-mode emacs
+set bell-style none
+set show-all-if-ambiguous On
+set horizontal-scroll-mode Off
+#set mark-modified-lines On
+set completion-query-items 100
+set visible-stats On
+
+## Edit the path.
+"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
+
+## Prepare to type a quoted word -- insert open and close double quotes
+## and move to just after the open quote.
+"\C-x\"": "\"\"\C-b"
+
+## Quote the current or previous word.
+"\C-xq": "\eb\"\ef\""
+
+"\C-xm": "make\C-j"
+
+"\C-x&": "\C-e &"
+
+## Force C-a to redraw current line.
+#"\C-xa": beginning-of-line
+#"\C-xr": redraw-current-line
+#"\C-a": "\C-xa\C-xr"
+
+$endif
